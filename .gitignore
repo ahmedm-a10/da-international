@@ -1,0 +1,7 @@
+# Internal project files — keep these OUT of the public site/repo
+CLAUDEwebsite.md
+DA International Prequal KSA.pdf
+
+# Redundant photo sources (the live copy the site uses is in photos/)
+da-international-photos/
+da-international-photos.zip

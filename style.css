@@ -1,0 +1,401 @@
+/* ===== Base page styles ===== */
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #333333;
+  margin: 0;
+}
+
+/* ===== Navigation bar ===== */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333333;
+}
+
+/* ===== Hero section ===== */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  background-color: #e9e8e6;
+}
+
+/* Cover hero: photo background with a dark overlay, light text */
+.hero--cover {
+  padding: 160px 20px;
+  color: #ffffff;
+  background-image:
+    linear-gradient(rgba(30, 28, 27, 0.55), rgba(30, 28, 27, 0.55)),
+    url("photos/cover-1.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Projects page cover hero (overrides the cover-1 background) */
+.hero--projects {
+  background-image:
+    linear-gradient(rgba(30, 28, 27, 0.55), rgba(30, 28, 27, 0.55)),
+    url("photos/shaza-makkah-1.jpeg");
+}
+
+.hero-eyebrow {
+  display: block;
+  font-family: "Pinyon Script", cursive;
+  font-size: 40px;
+  color: #e8ddca;
+}
+
+.hero-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 88px;
+  font-weight: 400;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  line-height: 1.05;
+  margin: 8px 0 20px;
+}
+
+.hero-tagline {
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* ===== Reusable layout ===== */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 90px 20px;
+}
+
+.section--light {
+  background-color: #ffffff;
+}
+
+.section--grey {
+  background-color: #e9e8e6;
+}
+
+.section--dark {
+  background-color: #2e2c2b;
+  color: #e8ddca;
+}
+
+/* Compact page header used on inner pages */
+.page-hero {
+  padding: 80px 20px 40px;
+  text-align: center;
+  background-color: #e9e8e6;
+}
+
+.page-hero__sub {
+  font-size: 17px;
+  font-style: italic;
+  color: #6b6b6b;
+  margin: 20px 0 0;
+}
+
+/* Script-over-serif heading used across the site */
+.section-heading {
+  margin-bottom: 40px;
+}
+
+.section-heading__script {
+  display: block;
+  font-family: "Pinyon Script", cursive;
+  font-size: 36px;
+  color: #8a7f6f;
+  line-height: 1;
+}
+
+.section-heading__title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 56px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #cfcbc4;
+}
+
+.section-heading--center {
+  text-align: center;
+}
+
+.section-heading--center .section-heading__title {
+  display: inline-block;
+}
+
+.lede {
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 720px;
+  margin: 0 0 20px;
+}
+
+.lede--center {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* ===== Services grid (3 columns) ===== */
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px 40px;
+}
+
+.service {
+  flex: 1 1 260px;
+}
+
+.service__name {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cfcbc4;
+}
+
+.service__desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555555;
+  margin: 0;
+}
+
+/* Two-column text + image layout */
+.split {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.split__text {
+  flex: 1;
+}
+
+.split__img {
+  flex: 1;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+/* Portrait photos of people: keep the head in frame by cropping from the top */
+.split__img--portrait {
+  height: 520px;
+  object-position: top center;
+}
+
+/* Centered pull-quote (mission statement) */
+.quote {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 26px;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* Leadership portraits */
+.people {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  text-align: center;
+}
+
+.person__img {
+  width: 240px;
+  height: 280px;
+  object-fit: cover;
+}
+
+.person__name {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 16px 0 4px;
+}
+
+.person__role {
+  font-style: italic;
+  color: #b8b2a7;
+  margin: 0;
+}
+
+/* ===== Featured project cards ===== */
+.cards {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.card {
+  flex: 1;
+  text-decoration: none;
+  color: #333333;
+}
+
+.card__img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.card__label {
+  display: block;
+  margin-top: 12px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+/* ===== Project gallery (3-column photo grid) ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.gallery__img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* ===== Signature projects list (2 columns) ===== */
+.signature {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 60px;
+}
+
+.signature__item {
+  padding: 16px 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #4a4744;
+}
+
+/* ===== Contact details ===== */
+.contact-details {
+  text-align: center;
+}
+
+.contact-line {
+  font-size: 20px;
+  margin: 0 0 18px;
+}
+
+.contact-line a {
+  color: #2e2c2b;
+  text-decoration: none;
+}
+
+.contact-label {
+  display: inline-block;
+  min-width: 130px;
+  font-family: "Pinyon Script", cursive;
+  font-size: 26px;
+  color: #8a7f6f;
+}
+
+/* ===== Office cards ===== */
+.offices {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.office__img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.office__city {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 26px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 20px 0 8px;
+}
+
+.office__address {
+  line-height: 1.7;
+  color: #555555;
+  margin: 0 0 8px;
+}
+
+.office__phone {
+  margin: 0;
+}
+
+.office__phone a {
+  color: #8a7f6f;
+  text-decoration: none;
+}
+
+/* ===== Button ===== */
+.button {
+  display: inline-block;
+  padding: 14px 32px;
+  border: 1px solid #2e2c2b;
+  color: #2e2c2b;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background-color: #2e2c2b;
+  color: #e8ddca;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.footer__name {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin: 0 0 8px;
+}
+
+.footer__contact {
+  font-size: 15px;
+  color: #b8b2a7;
+  margin: 0;
+}
+
+.footer__contact a {
+  color: #b8b2a7;
+}

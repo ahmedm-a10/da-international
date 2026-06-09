@@ -6,17 +6,61 @@ body {
 }
 
 /* ===== Navigation bar ===== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(207, 203, 196, 0.6);
+}
+
 nav ul {
   list-style: none;
   margin: 0;
-  padding: 20px;
+  padding: 0 30px;
+  height: 62px;
   display: flex;
-  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
 }
 
 nav a {
   text-decoration: none;
   color: #333333;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 15px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #8a7f6f;
+  transition: width 0.35s ease;
+}
+
+nav a:hover {
+  color: #8a7f6f;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+nav a.active {
+  color: #8a7f6f;
 }
 
 /* ===== Hero section ===== */
@@ -398,4 +442,139 @@ nav a {
 
 .footer__contact a {
   color: #b8b2a7;
+}
+
+/* ===== Hero entrance animation ===== */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.hero-eyebrow {
+  animation: heroFadeUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.15s both;
+}
+
+.hero-title {
+  animation: heroFadeUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.35s both;
+}
+
+.hero-tagline {
+  animation: heroFadeUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.55s both;
+}
+
+/* ===== Scroll-reveal ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ===== Anchor scroll offset for sticky nav ===== */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* ===== Card hover ===== */
+.card {
+  overflow: hidden;
+}
+
+.card__img {
+  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .card__img {
+  transform: scale(1.05);
+}
+
+.card__label {
+  transition: color 0.3s ease;
+}
+
+.card:hover .card__label {
+  color: #8a7f6f;
+}
+
+/* ===== Gallery image hover ===== */
+.gallery__img {
+  clip-path: inset(0);
+  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 0.65s ease;
+}
+
+.gallery__img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.07);
+}
+
+/* ===== Person portrait hover ===== */
+.person__img {
+  clip-path: inset(0);
+  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.person:hover .person__img {
+  transform: scale(1.04);
+}
+
+/* ===== Office image hover ===== */
+.office__img {
+  clip-path: inset(0);
+  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.office:hover .office__img {
+  transform: scale(1.04);
+}
+
+/* ===== Service item hover ===== */
+.service {
+  transition: transform 0.35s ease;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== Button hover ===== */
+.button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2e2c2b;
+  color: #e8ddca;
+}
+
+/* ===== Signature list hover ===== */
+.signature__item {
+  transition: padding-left 0.3s ease, color 0.3s ease;
+}
+
+.signature__item:hover {
+  padding-left: 10px;
+  color: #c4b89a;
+}
+
+/* ===== Footer & contact link hover ===== */
+.footer__contact a {
+  transition: color 0.3s ease;
+}
+
+.footer__contact a:hover {
+  color: #e8ddca;
+}
+
+.contact-line a {
+  transition: color 0.3s ease;
+}
+
+.contact-line a:hover {
+  color: #8a7f6f;
 }

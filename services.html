@@ -35,7 +35,7 @@
 
     <section class="section section--light">
       <div class="container">
-        <div class="services">
+        <div class="services reveal">
           <div class="service">
             <h3 class="service__name">Interior Design</h3>
             <p class="service__desc">
@@ -84,11 +84,11 @@
 
     <section class="section section--grey">
       <div class="container">
-        <div class="section-heading section-heading--center">
+        <div class="section-heading section-heading--center reveal">
           <span class="section-heading__script">Tailored to a</span>
           <h2 class="section-heading__title">Variety of Sectors</h2>
         </div>
-        <p class="lede lede--center">
+        <p class="lede lede--center reveal">
           From luxury hotels and branded residences to multi-unit developments and
           curated public spaces, we deliver across the hospitality, residential,
           retail, and cultural sectors throughout the Gulf region.
@@ -105,5 +105,22 @@
         </p>
       </div>
     </footer>
+  <script>
+    const revealObserver = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          revealObserver.unobserve(e.target);
+        }
+      }),
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const page = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav a').forEach(a => {
+      if (a.getAttribute('href') === page) a.classList.add('active');
+    });
+  </script>
   </body>
 </html>

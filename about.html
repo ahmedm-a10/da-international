@@ -31,7 +31,7 @@
     </header>
 
     <section class="section section--light">
-      <div class="container split">
+      <div class="container split reveal">
         <div class="split__text">
           <p class="lede">
             DA International is a Dubai-based interior finishing and contracting
@@ -55,7 +55,7 @@
     </section>
 
     <section class="section section--dark">
-      <div class="container split">
+      <div class="container split reveal">
         <img class="split__img split__img--portrait" src="photos/dalia-adel-bio-1.jpeg" alt="Dalia Adel, Founder & CEO" />
         <div class="split__text">
           <div class="section-heading">
@@ -82,11 +82,11 @@
 
     <section class="section section--grey">
       <div class="container">
-        <div class="section-heading section-heading--center">
+        <div class="section-heading section-heading--center reveal">
           <span class="section-heading__script">Our</span>
           <h2 class="section-heading__title">Mission</h2>
         </div>
-        <p class="quote">
+        <p class="quote reveal">
           "At DA International, our mission is to deliver superior turnkey
           interior solutions that reflect the individuality of every client.
           Through an unwavering dedication to quality and a deep appreciation for
@@ -100,11 +100,11 @@
 
     <section class="section section--dark">
       <div class="container">
-        <div class="section-heading section-heading--center">
+        <div class="section-heading section-heading--center reveal">
           <span class="section-heading__script">Meet Our</span>
           <h2 class="section-heading__title">Leadership</h2>
         </div>
-        <div class="people">
+        <div class="people reveal">
           <div class="person">
             <img class="person__img" src="photos/leadership-2.jpeg" alt="Dalia Adel" />
             <p class="person__name">Dalia Adel</p>
@@ -128,5 +128,22 @@
         </p>
       </div>
     </footer>
+  <script>
+    const revealObserver = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          revealObserver.unobserve(e.target);
+        }
+      }),
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const page = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav a').forEach(a => {
+      if (a.getAttribute('href') === page) a.classList.add('active');
+    });
+  </script>
   </body>
 </html>

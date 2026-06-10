@@ -173,6 +173,15 @@ nav ul a.active {
   margin: 0;
 }
 
+/* Brand logo used as the homepage hero title */
+.hero-logo {
+  display: block;
+  width: min(620px, 86vw);
+  height: auto;
+  margin: 0 auto;
+  filter: drop-shadow(0 3px 22px rgba(20, 18, 17, 0.45));
+}
+
 /* ===== Reusable layout ===== */
 .container {
   max-width: 1000px;

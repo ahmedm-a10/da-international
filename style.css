@@ -454,6 +454,11 @@ nav ul a.active {
   color: #8a7f6f;
 }
 
+/* The "WhatsApp" link inside a label keeps the label's script color */
+.contact-label a {
+  color: inherit;
+}
+
 /* ===== Office cards ===== */
 .offices {
   display: grid;
@@ -570,6 +575,14 @@ nav ul a.active {
 .footer__nav a:hover,
 .footer__contact-col a:hover {
   color: #e8ddca;
+}
+
+/* "WhatsApp" link shown beside the +971 50 mobile number
+   (contact page, Mecca office card, footer). Underlined so the word
+   reads as clickable — must stay below the rules that remove underlines. */
+a.whatsapp-link {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .footer__bottom {

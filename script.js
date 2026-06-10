@@ -43,8 +43,8 @@ const FOOTER_HTML = `
     <div class="footer__contact-col">
       <p class="footer__script">Contact</p>
       <a href="mailto:info@dainternational-id.com">info@dainternational-id.com</a>
-      <a href="tel:+971553099800">DXB +971 55 309 9800</a>
-      <a href="tel:+966544513021">KSA +966 54 451 3021</a>
+      <a href="tel:+971553099800">+971 55 309 9800</a>
+      <span><a class="whatsapp-link" href="https://wa.me/971509808812" target="_blank" rel="noopener">WhatsApp</a> <a href="tel:+971509808812">+971 50 980 8812</a></span>
     </div>
   </div>
   <div class="footer__bottom">

@@ -21,8 +21,8 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-/* ===== Navigation bar ===== */
-nav {
+/* ===== Navigation bar (body > nav = the top bar only, not the footer nav) ===== */
+body > nav {
   position: sticky;
   top: 0;
   z-index: 100;
@@ -739,7 +739,7 @@ section[id] {
 
 /* ===== Responsive: tablets and phones ===== */
 @media (max-width: 768px) {
-  nav {
+  body > nav {
     padding: 0 24px;
     height: 64px;
   }

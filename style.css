@@ -577,12 +577,28 @@ nav ul a.active {
   color: #e8ddca;
 }
 
-/* "WhatsApp" link shown beside the +971 50 mobile number
-   (contact page, Mecca office card, footer). Underlined so the word
-   reads as clickable — must stay below the rules that remove underlines. */
-a.whatsapp-link {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+/* WhatsApp icon link shown beside the +971 50 mobile number
+   (contact page, Mecca office card, footer). script.js swaps the
+   "WhatsApp" text in the HTML for this inline SVG logo on load.
+   fill: currentColor makes the icon take whatever text color its
+   surroundings use (tan on the contact page, beige in the footer). */
+a.whatsapp-link svg {
+  width: 1.1em;
+  height: 1.1em;
+  fill: currentColor;
+  vertical-align: -0.18em;
+  transition: fill 0.3s ease;
+}
+
+a.whatsapp-link:hover svg {
+  fill: #4caf50; /* hint of WhatsApp green on hover */
+}
+
+/* Inside the big script-font "Phone /" label the icon would scale up
+   with the 26px font — cap it so it sits politely beside the words */
+.contact-label a.whatsapp-link svg {
+  width: 20px;
+  height: 20px;
 }
 
 .footer__bottom {
